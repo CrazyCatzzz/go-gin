@@ -1,0 +1,12 @@
+[mysql]
+server="192.168.2.241"
+port=3306
+user="root"
+password="123456"
+name="appcheck"
+[redis]
+servre="192.168.2.241"
+port=6378
+[http]
+port=8091
+debug=true

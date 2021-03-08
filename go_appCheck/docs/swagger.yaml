@@ -1,0 +1,15 @@
+basePath: /
+host: localhost:8091
+info:
+  contact: {}
+  description: appcheck
+  license: {}
+  title: appcheck
+  version: "1.0"
+paths: {}
+securityDefinitions:
+  ApiKeyAuth:
+    in: header
+    name: Cookie
+    type: apiKey
+swagger: "2.0"
