@@ -1,0 +1,7 @@
+[http]
+port=8091
+debug=true
+[swagger]
+enabled = true
+host = "192.168.2.67"
+port = 8091
