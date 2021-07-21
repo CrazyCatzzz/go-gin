@@ -1,0 +1,62 @@
+basePath: /
+definitions:
+  response.Response:
+    properties:
+      msg:
+        type: string
+      payload:
+        type: object
+      success:
+        type: boolean
+    type: object
+host: localhost:8091
+info:
+  contact: {}
+  description: c2server
+  license: {}
+  title: c2server
+  version: "1.0"
+paths:
+  /login:
+    post:
+      consumes:
+      - application/json
+      description: 登录
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: '{"success":true,"msg":"","data":null}'
+          schema:
+            $ref: '#/definitions/response.Response'
+        "400":
+          description: '{"success":false,"msg":"请求参数错误","data":null}'
+          schema:
+            $ref: '#/definitions/response.Response'
+        "401":
+          description: '{"success":false,"msg":"用户未登录","data":null}'
+          schema:
+            $ref: '#/definitions/response.Response'
+        "403":
+          description: '{"success":false,"msg":"访问受限","data":null}'
+          schema:
+            $ref: '#/definitions/response.Response'
+        "404":
+          description: '{"success":false,"msg":"路径不存在","data":null}'
+          schema:
+            $ref: '#/definitions/response.Response'
+        "500":
+          description: '{"success":false,"msg":"Internal Server Error","data":null}'
+          schema:
+            $ref: '#/definitions/response.Response'
+      security:
+      - ApiKeyAuth: []
+      summary: 登录
+      tags:
+      - 登录
+securityDefinitions:
+  ApiKeyAuth:
+    in: header
+    name: Cookie
+    type: apiKey
+swagger: "2.0"
